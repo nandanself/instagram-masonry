@@ -8,12 +8,48 @@ html {
 	height: 100%;
 }
 
+
 body {
 	margin: 0;
 	text-align:center;
 	padding: 20px 20px;
 	background: black;
 	text-align: center;
+}
+
+p{
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	cursor: pointer;
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+img{
+  vertical-align: middle;
+}
+
+div{
+  box-sizing: border-box;
+}
+
+.small-display-pic {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #707070;
+	flex-shrink: 0;
 }
 
 .grid-layout{
@@ -35,3 +71,30 @@ body {
 	transition: box-shadow .35s ease-out,transform .3s ease-out,opacity .2s ease-out;
 }
 
+.insta-card .headerBox{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  background: red;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 16px;
+  flex-direction: row;
+	align-items: center;
+}
+
+.insta-card .headerBox .username{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background: yellow;
+	flex-grow:1;
+	flex-shrink: 1;
+	-webkit-box-align: start;
+	position: relative;
+	-webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-sizing: content-box;
+	margin-left: 10px;
+	overflow: hidden;
+}
