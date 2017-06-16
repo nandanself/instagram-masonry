@@ -1,8 +1,9 @@
 <div class="headerBox">
-{{scaled-image src="https://d2r0rrogy5uf19.cloudfront.net/userDPs/8bedfd9d-dfc1-390e-b17a-d5bbde21d172.jpg"}}
-<div class="username">
-  <a href="">Maruti Nandan</a>
-  <!-- <a href=""></a> -->
+	{{scaled-image src=photo.profilePic}}
+	<div class="username">
+		<a href="">{{photo.name}}</a>
+		<a href="">{{photo.location}}</a>
+	</div>
 </div>
-</div>
+{{insta-image src=photo.image height=photo.computedHeight}}
 {{yield}}

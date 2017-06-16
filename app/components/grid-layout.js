@@ -1,16 +1,15 @@
 import Ember from 'ember';
+import DummyData from 'instamasonry/mixins/dummy-data';
 
 const {
 	htmlSafe
 } = Ember.String;
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(DummyData,{
 	ajax: Ember.inject.service(),
 
-	cardSize:320,
-
-	a:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-
+	cardSize:300,
+	
 	classNames:['grid-layout'],
 
 	attributeBindings:['masonryGridStyle:style'],
@@ -18,12 +17,12 @@ export default Ember.Component.extend({
 	gridHeight:null,
 
 	masonryGridStyle:Ember.computed('gridHeight',function(){
-		this.get('ajax').request('https://www.instagram.com/nandanself/media/',{
-			method:'GET',
-			crossOrigin: true,
-		}).then(function(response){
-			console.log(response);
-		});
+		// this.get('ajax').request('https://www.instagram.com/nandanself/media/',{
+		// 	method:'GET',
+		// 	crossOrigin: true,
+		// }).then(function(response){
+		// 	console.log(response);
+		// });
 		const cardSize = this.get('cardSize');
 		let documentWidth = Ember.$(document).width() - 40;
 		let width ="width:" + ((Math.floor(documentWidth / cardSize)) * cardSize + (Math.floor(documentWidth / cardSize) - 1) * 10) + "px;" + this.get('gridHeight');
@@ -33,9 +32,9 @@ export default Ember.Component.extend({
 	didInsertElement(){
 		const cardSize = this.get('cardSize');
 		let documentWidth = Ember.$(document).width() - 40;
-		console.log(documentWidth);
+		// console.log(documentWidth);
 		let numberOfColumn = Math.floor(documentWidth / cardSize);
-		console.log(numberOfColumn);
+		// console.log(numberOfColumn);
 		let pad = 10, cols = numberOfColumn, newleft,newtop;
 		let gridHeight = 0;
 		var photosCard = document.getElementsByClassName('insta-card');

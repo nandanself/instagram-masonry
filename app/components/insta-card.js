@@ -9,5 +9,20 @@ export default Ember.Component.extend({
 	classNames:['insta-card'],
 	attributeBindings: ['cardStyle:style'],
 	
-	cardStyle:htmlSafe('position:absolute'),
+	cardStyle:Ember.computed('photo',function(){
+		let height = "height:" + (60 + parseInt(this.get('photo.computedHeight'))) + "px"; 
+		return htmlSafe('position:absolute;' + height);
+	}),
+
+	// didInsertElement(){
+	// 	Ember.$(window).on('scroll',Ember.$.proxy(this.didSroll,this));
+	// },
+
+	// willDestroyElement(){
+	// 	Ember.$(window).off('scroll',Ember.$.proxy(this.didSroll,this));
+	// },
+
+	// didSroll(){
+	// 	console.log();
+	// }
 });
