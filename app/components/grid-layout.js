@@ -29,7 +29,12 @@ export default Ember.Component.extend(DummyData,{
 		return htmlSafe(width);
 	}),
 
-	didInsertElement(){
+	_setUpCard(){
+		var photosCard = document.getElementsByClassName('insta-card');
+		for (var j = 1 ; j < photosCard.length; j++){
+			photosCard[j].style.top = "0px";
+			photosCard[j].style.left = "0px";
+		}
 		const cardSize = this.get('cardSize');
 		let documentWidth = Ember.$(document).width() - 40;
 		// console.log(documentWidth);
@@ -37,7 +42,7 @@ export default Ember.Component.extend(DummyData,{
 		// console.log(numberOfColumn);
 		let pad = 10, cols = numberOfColumn, newleft,newtop;
 		let gridHeight = 0;
-		var photosCard = document.getElementsByClassName('insta-card');
+		
 		for (var i = 1 ; i < photosCard.length; i++){
 			if( i % cols === 0){
 				newtop = (photosCard[i-cols].offsetTop + photosCard[i-cols].offsetHeight) + pad;
@@ -64,6 +69,15 @@ export default Ember.Component.extend(DummyData,{
 		gridHeight = "height:" + (gridHeight) +"px";
 		this.set('gridHeight',gridHeight);
 	},
+
+	didInsertElement(){
+		this._setUpCard();
+		Ember.$(window).on('resize', Ember.$.proxy(this._setUpCard, this));
+	},
+
+	willDestroyElement(){
+		Ember.$(window).off('resize', Ember.$.proxy(this._setUpCard, this));
+	}
 
 
 });

@@ -32,7 +32,7 @@ export default Ember.Component.extend(Viewport,{
 		});
 		let image = this.$('img')[0];
 		this.$('img')[0].onload = function(){
-			console.log(image);
+			// console.log(image);
 			image.classList.add('image-animation');
 			currentState.set('notLoaded',false);
 		};	
