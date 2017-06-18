@@ -1,28 +1,35 @@
 import Ember from 'ember';
+import ViewPort from "instamasonry/mixins/viewport";
 
 const {
 	htmlSafe
 } = Ember.String;
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(ViewPort,{
 	tagName:'article',
 	classNames:['insta-card'],
 	attributeBindings: ['cardStyle:style'],
-	
-	cardStyle:Ember.computed('photo',function(){
-		let height = "height:" + (60 + parseInt(this.get('photo.computedHeight'))) + "px"; 
-		return htmlSafe('position:absolute;' + height);
-	}),
+
+	cardStyle:htmlSafe('position:absolute;'),
 
 	// didInsertElement(){
-	// 	Ember.$(window).on('scroll',Ember.$.proxy(this.didSroll,this));
+	// 	Ember.run.scheduleOnce('afterRender', this, function() {
+	// 		this.didScroll();
+	// 	});
+	// 	Ember.$(window).on('scroll',Ember.$.proxy(this.didScroll,this));
 	// },
-
+	//
 	// willDestroyElement(){
-	// 	Ember.$(window).off('scroll',Ember.$.proxy(this.didSroll,this));
+	// 	Ember.$(window).off('scroll',Ember.$.proxy(this.didScroll,this));
+	// },
+	//
+	// didScroll(){
+	// 	let node = this.$()[0];
+	// 	// console.log(node);
+	// 	if (this.isVisibleInViewport(node)){
+	// 		console.log('this.isVisibleInViewport(node)');
+	// 		node.classList.add('card-animation');
+	// 	}
 	// },
 
-	// didSroll(){
-	// 	console.log();
-	// }
 });

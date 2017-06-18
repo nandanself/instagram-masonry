@@ -16,6 +16,14 @@ export default Ember.Component.extend(Viewport,{
 		return htmlSafe(height);
 	}),
 
+	doubleClick: function() {
+		console.log('doubleClick');
+	},
+
+	click(){
+		console.log('click')
+	},
+
 	_settingSourceValue(){
 		let currentState = this;
 		let imageTag = this.$()[0];
@@ -32,10 +40,9 @@ export default Ember.Component.extend(Viewport,{
 		});
 		let image = this.$('img')[0];
 		this.$('img')[0].onload = function(){
-			// console.log(image);
 			image.classList.add('image-animation');
 			currentState.set('notLoaded',false);
-		};	
+		};
 		Ember.$(window).on('scroll',Ember.$.proxy(this.didScroll,this));
 	},
 

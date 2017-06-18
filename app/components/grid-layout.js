@@ -9,7 +9,7 @@ export default Ember.Component.extend(DummyData,{
 	ajax: Ember.inject.service(),
 
 	cardSize:300,
-	
+
 	classNames:['grid-layout'],
 
 	attributeBindings:['masonryGridStyle:style'],
@@ -42,7 +42,7 @@ export default Ember.Component.extend(DummyData,{
 		// console.log(numberOfColumn);
 		let pad = 10, cols = numberOfColumn, newleft,newtop;
 		let gridHeight = 0;
-		
+
 		for (var i = 1 ; i < photosCard.length; i++){
 			if( i % cols === 0){
 				newtop = (photosCard[i-cols].offsetTop + photosCard[i-cols].offsetHeight) + pad;
@@ -78,6 +78,5 @@ export default Ember.Component.extend(DummyData,{
 	willDestroyElement(){
 		Ember.$(window).off('resize', Ember.$.proxy(this._setUpCard, this));
 	}
-
 
 });

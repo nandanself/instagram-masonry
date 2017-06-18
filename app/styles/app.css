@@ -35,6 +35,8 @@ a {
 	white-space: nowrap;
 	color:white;
 	text-decoration: none;
+	font-family: monospace;
+	letter-spacing: 0.3px;
 }
 
 img{
@@ -81,7 +83,7 @@ div{
 }
 
 @keyframes sk-bouncedelay {
-	0%, 80%, 100% { -webkit-transform: scale(0);transform: scale(0);} 
+	0%, 80%, 100% { -webkit-transform: scale(0);transform: scale(0);}
 	40% { -webkit-transform: scale(1.0); transform: scale(1.0);}
 }
 
@@ -110,7 +112,8 @@ div{
 	box-sizing: border-box;
 	border-radius: 5px;
 	box-shadow: 0 0 5px 0 rgba(0,0,0,.19);
-	transition: box-shadow .35s ease-out,transform .3s ease-out,opacity .2s ease-out;
+	left:0px;
+	top:0px;
 }
 
 .insta-card .headerBox{
@@ -157,6 +160,42 @@ div{
 }
 
 @keyframes imagedisplay {
-	0%{ -webkit-transform: scale(0);transform: scale(0);} 
+	0%{ -webkit-transform: scale(0);transform: scale(0);}
 	100% { -webkit-transform: scale(1.0); transform: scale(1.0);}
 }
+
+
+.card-animation{
+	-webkit-transform:translateY(200px);
+	transform: translateY(200px);
+	-webkit-animation: moveup 1.4s  ease forwards;
+	animation: moveup 1.4s ease forwards;
+}
+
+@-webkit-keyframes imagedisplay {
+
+	0% {}
+	100% {-webkit-transform:translateY(0);transform: translateY(0px) }
+}
+
+@keyframes imagedisplay {
+	0%{ }
+	100% { -webkit-transform:translateY(0);transform: translateY(0px) }
+}
+
+/*.card-animation{
+	-webkit-transform:translateY(200px);
+	transform: translateY(200px);
+	-webkit-animation: moveUp 0.65s ease forwards;
+	animation: moveUp 0.65s ease forwards;
+}
+
+@-webkit-keyframes moveUp(){
+	0% { }
+	100% { transform:translateY(0)}
+}*/
+
+/*@@keyframes moveUp {
+	0% {}
+	100% {-webkit-transform:translateY(0),transform:translateY(0) ,opacity:1}
+}*/
