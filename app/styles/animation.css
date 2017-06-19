@@ -1,0 +1,32 @@
+.image-animation{
+	-webkit-animation: imagedisplay 1.4s  ease-in-out both;
+	animation: imagedisplay 1.4s ease-in-out both;
+	display: block;
+}
+
+@-webkit-keyframes imagedisplay {
+	0%{ -webkit-transform: scale(0) }
+	100% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes imagedisplay {
+	0%{ -webkit-transform: scale(0);transform: scale(0);}
+	100% { -webkit-transform: scale(1.0); transform: scale(1.0);}
+}
+
+.card-animation {
+	-webkit-transform:translateY(200px);
+	transform: translateY(200px);
+	-webkit-animation: moveUp 0.65s ease forwards;
+	animation: moveUp 0.65s ease forwards ;
+}
+
+@-webkit-keyframes moveUp(){
+	0% { }
+	100% { -webkit-transform: translateY(0); opacity: 1;}
+}
+
+@keyframes moveUp {
+	0% { }
+	100% {-webkit-transform: translateY(0); transform: translateY(0); opacity: 1;}
+}

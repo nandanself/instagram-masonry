@@ -1,0 +1,7 @@
+{{#if liked}}
+<img {{action "photoUnLiked"}} class="heart-icon" src="/insta_card_icons/heart_red.png"/>
+{{else}}
+<img {{action "photoLiked"}} class="heart-icon" src="/insta_card_icons/heart_white.png"/>
+{{/if}}
+{{yield}}
+

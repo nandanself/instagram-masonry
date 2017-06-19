@@ -27,7 +27,7 @@ export default Ember.Component.extend(ViewPort,{
 		let node = this.$()[0];
 		// console.log(node);
 		if (this.isVisibleInViewport(node)){
-			console.log('this.isVisibleInViewport(node)');
+			// console.log('this.isVisibleInViewport(node)');
 			node.classList.add('card-animation');
 		}
 	},

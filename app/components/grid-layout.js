@@ -23,26 +23,38 @@ export default Ember.Component.extend(DummyData,{
 		// }).then(function(response){
 		// 	console.log(response);
 		// });
+		const pad =10;
 		const cardSize = this.get('cardSize');
 		let documentWidth = Ember.$(document).width() - 40;
-		let width ="width:" + ((Math.floor(documentWidth / cardSize)) * cardSize + (Math.floor(documentWidth / cardSize) - 1) * 10) + "px;" + this.get('gridHeight');
+		let numCards = Math.floor(documentWidth/cardSize);
+		let width;	
+		if((numCards*cardSize + (numCards - 1)*pad) < documentWidth){
+			width ="width:" + (numCards*cardSize + (numCards - 1)*pad) + "px;" + this.get('gridHeight');
+		}else if ((numCards*cardSize + (numCards - 1)*pad) > documentWidth){
+			width ="width:" + ((numCards-1)*cardSize + (numCards - 2)*pad) + "px;" + this.get('gridHeight');
+		}
 		return htmlSafe(width);
 	}),
 
 	_setUpCard(){
+		let pad = 10,newleft,newtop;
 		var photosCard = document.getElementsByClassName('insta-card');
 		for (var j = 1 ; j < photosCard.length; j++){
 			photosCard[j].style.top = "0px";
 			photosCard[j].style.left = "0px";
 		}
+
 		const cardSize = this.get('cardSize');
 		let documentWidth = Ember.$(document).width() - 40;
-		// console.log(documentWidth);
-		let numberOfColumn = Math.floor(documentWidth / cardSize);
-		// console.log(numberOfColumn);
-		let pad = 10, cols = numberOfColumn, newleft,newtop;
+		var numberOfColumn = 0 ;
+		let numCards = Math.floor(documentWidth/cardSize);
+		if ( (numCards*cardSize + (numCards - 1)*pad) < documentWidth ){
+			numberOfColumn = Math.floor(documentWidth / cardSize);
+		}else if ( (numCards*cardSize + (numCards - 1)*pad) > documentWidth) {
+			numberOfColumn = Math.floor(documentWidth / cardSize) - 1;
+		}
 		let gridHeight = 0;
-
+		let cols = numberOfColumn;
 		for (var i = 1 ; i < photosCard.length; i++){
 			if( i % cols === 0){
 				newtop = (photosCard[i-cols].offsetTop + photosCard[i-cols].offsetHeight) + pad;
