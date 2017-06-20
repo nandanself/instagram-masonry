@@ -21,7 +21,7 @@ export default Ember.Component.extend(Viewport,{
 	},
 
 	click(){
-		console.log('click')
+		console.log('click');
 	},
 
 	_settingSourceValue(){
@@ -38,8 +38,8 @@ export default Ember.Component.extend(Viewport,{
 		Ember.run.scheduleOnce('afterRender', this, function() {
 			this._settingSourceValue();
 		});
-		let image = this.$('img')[0];
-		this.$('img')[0].onload = function(){
+		let image = this.$('img')[1];
+		this.$('img')[1].onload = function(){
 			image.classList.add('image-animation');
 			currentState.set('notLoaded',false);
 		};
