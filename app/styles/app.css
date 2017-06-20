@@ -17,19 +17,19 @@ body {
 }
 
 p{
-	color:white;
 	margin:0px;
 	padding: 0px;
 	font-family: monospace;
 	letter-spacing: 0.3px;
+	color: rgba(255, 255, 255, 0.54);
 }
 
 span {
-	color:white;
 	margin:0px;
 	padding: 0px;
 	font-family: monospace;
 	letter-spacing: 0.3px;
+	color:rgba(255, 255, 255, 0.54);
 }
 
 a {
@@ -40,6 +40,7 @@ a {
 	vertical-align: baseline;
 	cursor: pointer;
 	color:white;
+	color:rgba(255, 255, 255, 0.54);
 	text-decoration: none;
 	font-family: monospace;
 	letter-spacing: 0.3px;
@@ -50,7 +51,7 @@ h2{
 	font-weight: 200;
 	font-family: monospace;
 	margin:0px;
-	color:white;
+	color:rgba(255, 255, 255, 0.54);;
 }
 
 img{
@@ -133,9 +134,9 @@ input {
 	font-family: monospace;
 	letter-spacing: 0.3px;
 	font-size: 18px;
-	color:black;
+	color:rgba(255, 255, 255, 0.2);
 	box-sizing: border-box;
-	background:white;
+	background:rgba(255, 255, 255, 0.2);
 	border:0px;
 	border-radius: 3px;
 	outline: 0px;
@@ -165,15 +166,15 @@ nav title{
 	font-family: 'Alex Brush', cursive;
 	font-size: 32px;
 	display: block;
-	color:white;
+	color:rgba(255, 255, 255, 0.54);
 }
 
 nav input{
-	/*width: 600px;*/
 	margin-right: 30px;
 	margin-left: 30px;
 	height: auto;
 	flex-grow:2;
+	padding: 7px 10px 10px 10px;
 }
 
 nav .small-display-pic{
@@ -210,7 +211,7 @@ nav .small-display-pic{
 
 .user-detailBox .small-display-pic {
 	width:152px;
-	height: 152px; 
+	height: 152px;
 }
 
 .user-detailBox .details{
@@ -288,12 +289,17 @@ nav .small-display-pic{
 
 .insta-card {
 	width: 300px;
-	border:1px solid #211f1f;
+	border:1pt solid rgba(255,255,255,0.3);
 	box-sizing: border-box;
 	border-radius: 5px;
 	box-shadow: 0 0 5px 0 rgba(0,0,0,.19);
 	left:0px;
 	top:0px;
+	transition: border .3s,color .3s;
+}
+
+.insta-card:hover {
+	border:1pt solid rgba(255,255,255,0.5);
 }
 
 .insta-card .headerBox{
@@ -385,7 +391,6 @@ nav .small-display-pic{
 	height: 24px;
 }
 
-
 .progress-bar {
 	position: fixed;
 	z-index: 999999;
@@ -393,8 +398,8 @@ nav .small-display-pic{
 	left: 0;
 	width: 0%;
 	height: 4px;
-	/*background-image:linear-gradient(-135deg,#1400c8,#b900b4,#f50000);*/
-	background-image: linear-gradient(-135deg,#c6c5d0,#8e758c,#b39b9b);
+	background-image:linear-gradient(-135deg,#1400c8,#b900b4,#f50000);
+	/*background-image: linear-gradient(-135deg,#c6c5d0,#8e758c,#b39b9b);*/
 	border-radius: 10%;
 	-moz-transition: width 500ms ease-out,opacity 400ms linear;
 	-ms-transition: width 500ms ease-out,opacity 400ms linear;
@@ -412,12 +417,3 @@ nav .small-display-pic{
 	height: 2px;
 	border-radius: 50%;
 	}*/
-
-
-
-
-
-
-
-
-

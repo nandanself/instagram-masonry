@@ -10,7 +10,7 @@ export default Ember.Component.extend(AjaxCall,{
 
 	actions:{
 		ajaxCall(){
-			let url = "http://scooptent.com/api/v2.0/photos/feed_new/?start=0&end=9";
+			let url = "http://scooptent.com/api/users/31/galleries/";
 			this.getCall(url).then(function(){
 				console.log('hiiiiiiiiiiiiiiiiii');
 			});
