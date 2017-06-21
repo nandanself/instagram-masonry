@@ -396,24 +396,32 @@ nav .small-display-pic{
 	z-index: 999999;
 	top: 0;
 	left: 0;
-	width: 0%;
+	width:100%;
 	height: 4px;
+	opacity:0;
 	background-image:linear-gradient(-135deg,#1400c8,#b900b4,#f50000);
 	/*background-image: linear-gradient(-135deg,#c6c5d0,#8e758c,#b39b9b);*/
 	border-radius: 10%;
-	-moz-transition: width 500ms ease-out,opacity 400ms linear;
-	-ms-transition: width 500ms ease-out,opacity 400ms linear;
-	-o-transition: width 500ms ease-out,opacity 400ms linear;
-	-webkit-transition: width 500ms ease-out,opacity 400ms linear;
-	transition: width 500ms ease-out,opacity 400ms linear;
+	animation: progress 6s ease infinite forwards;
 }
-/*.progress-bar:before {
-	position: absolute;
-	content: '';
-	top: 0;
-	opacity: 1;
-	width: 10%;
-	right: 0px;
-	height: 2px;
-	border-radius: 50%;
-	}*/
+
+@keyframes progress {
+	0% {width: 0%},
+	10% {width: 10%},
+	20% {width: 20%},
+	30% {width: 30%},
+	40% {width: 40%},
+	50% {width: 50%},
+	60% {width: 60%},
+	70% {width: 70%},
+	80% {width: 80%},
+	90% {width: 90%},
+	100% {width: 100%},
+
+}
+
+.landing-page {
+	width: 100vw;
+	height: 100vh;
+	background-image:linear-gradient(-135deg,#1400c8,#b900b4,#f50000);
+}

@@ -10,9 +10,10 @@ export default Ember.Component.extend(AjaxCall,{
 
 	actions:{
 		ajaxCall(){
+			document.getElementsByClassName('progress-bar')[0].style.opacity = 1;
 			let url = "http://scooptent.com/api/users/31/galleries/";
 			this.getCall(url).then(function(){
-				console.log('hiiiiiiiiiiiiiiiiii');
+				document.getElementsByClassName('progress-bar')[0].style.opacity = 0;
 			});
 		}
 	}
