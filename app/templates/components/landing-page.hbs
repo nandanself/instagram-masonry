@@ -1,4 +1,15 @@
-{{#each a as |photo|}}
-{{insta-card photo=photo}}
-{{/each}}
+<div class="login-card">
+	<title>Enstamasonry</title>
+	<div class="login-strip">
+		<img src="/landing_page_photos/instagram1.png" style="height:60px;" />
+		<p>Continue with Instagram</p>
+	</div>
+</div>
+<div class="sliding-page">
+	<div class="cover">	
+	</div>
+	{{#each a as}}
+	{{landing-card}}
+	{{/each}}
+</div>
 {{yield}}

@@ -296,9 +296,6 @@ nav .small-display-pic{
 	left:0px;
 	top:0px;
 	transition: border .3s,color .3s;
-	display: inline-block;
-	height: 400px;
-	margin-bottom: 10px;
 }
 
 .insta-card:hover {
@@ -420,14 +417,103 @@ nav .small-display-pic{
 	80% {width: 80%},
 	90% {width: 90%},
 	100% {width: 100%},
-
 }
 
-.landing-page {
-	width: 100vw;
+.landing-page{
+	display: flex;
+	width: 100%;
 	height: auto;
-	transform: rotateX(65deg) rotateY(0deg) rotateZ(-45deg);
-	position: absolute;
-	background-image:linear-gradient(-135deg,#1400c8,#b900b4,#f50000);
+	align-items: center;
+	justify-content: center;
+}
 
+.login-card{
+	width:400px;
+	height: 533px;
+	background:rgba(0,0,0,.8);
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 2;
+	border-radius: 10px;
+	padding: 40px 40px;
+	border:0.5px solid #211f1f;
+	box-shadow: 2px 3px 4px 0 #211f1f;
+	display: flex;
+	align-items:center;
+	flex-direction: column;
+}
+
+.login-card .login-strip {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	background:red;
+	flex-direction:row;
+	align-items:center;
+	justify-content: center;
+}
+
+.login-card .login-strip p{
+	font-size: 16px;
+	margin-left: 24px;
+}
+
+.login-card title{
+	font-family: 'Alex Brush', cursive;
+	font-size: 64px;
+	display: block;
+	color:rgba(255, 255, 255, 0.54);
+}
+
+.sliding-page {
+	padding-top: 20px;
+	width: 100%;
+	height:auto;
+	background:black
+	-webkit-transform:translateY(0px);
+	transform: translateY(0px);
+	-webkit-animation: moveDown 180s ease infinite forwards;
+	animation: moveDown 180s ease infinite forwards ;
+	position:fixed;
+}
+
+@-webkit-keyframes moveDown(){
+	0% { }
+	100% { -webkit-transform: translateY(-4000px); opacity: 1;}
+}
+
+@keyframes moveDown {
+	0% { }
+	100% {-webkit-transform: translateY(-4000px); transform: translateY(-4000px); opacity: 1;}
+}
+
+.sliding-page .cover{
+	width: 100vw;
+	height:4256px;
+	position:absolute;
+	z-index: 1;
+	background:rgba(0,0,0, 0.5);
+	top:0px;
+}
+
+.landing-card {
+	width: 200px;
+	height: 200px;
+	border:1pt solid rgba(255,255,255,0.3);
+	box-sizing: border-box;
+	border-radius: 50%;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,.19);
+	transition: border .3s,color .3s;
+	display: inline-block;
+	background: black;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.landing-card img{
+	width: 100%;
+	height: 100%;
 }
