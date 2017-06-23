@@ -62,8 +62,8 @@ export default Ember.Component.extend({
     // adjust the image coordinates and size
     img.width = result.width;
     img.height = result.height;
-    Ember.$('img').css("margin-left", result.targetleft);
-    Ember.$('img').css("margin-top", result.targettop);
+    // Ember.$('img').css("margin-left", result.targetleft);
+    // Ember.$('img').css("margin-top", result.targettop);
     return result;
   },
 
